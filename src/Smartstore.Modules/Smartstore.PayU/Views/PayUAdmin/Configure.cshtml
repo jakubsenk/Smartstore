@@ -1,0 +1,207 @@
+﻿@model ConfigurationModel
+
+@{    
+    Layout = "_ConfigureProvider";
+}
+
+@await Component.InvokeAsync("StoreScope")
+
+<widget target-zone="admin_button_toolbar_before">
+    <button id="SaveConfigButton" type="submit" name="save" class="btn btn-warning" value="save">
+        <i class="fa fa-check"></i>
+        <span>@T("Admin.Common.Save")</span>
+    </button>
+</widget>
+
+<div class="plugin-configuration">
+    <div>
+        <div class="alert alert-info alert-dismissible">
+            @Html.Raw(T("Plugins.Smartstore.PayU.AdminInstruction"))
+        </div>
+    </div>
+    <div>
+        <a href="#" target="_blank">
+            <img src="@Url.Content("~/Modules/Smartstore.PayU/icon.png")" alt="PayU" />
+        </a>
+    </div>
+</div>
+<form asp-action="Configure">
+    <div asp-validation-summary="All"></div>
+    <div class="adminContent">
+				<div class="adminRow">
+            <div class="adminTitle">
+                <smart-label asp-for="Description" />
+            </div>
+            <div class="adminData">
+                <setting-editor asp-for="Description"></setting-editor>
+                <span asp-validation-for="Description"></span>
+            </div>
+        </div>
+
+				<hr>
+
+        <div class="adminRow">
+            <div class="adminTitle">
+                <smart-label asp-for="ClientID" />
+            </div>
+            <div class="adminData">
+                <setting-editor asp-for="ClientID"></setting-editor>
+                <span asp-validation-for="ClientID"></span>
+            </div>
+        </div>
+				<div class="adminRow">
+            <div class="adminTitle">
+                <smart-label asp-for="PosID" />
+            </div>
+            <div class="adminData">
+                <setting-editor asp-for="PosID"></setting-editor>
+                <span asp-validation-for="PosID"></span>
+            </div>
+        </div>
+        <div class="adminRow">
+            <div class="adminTitle">
+                <smart-label asp-for="ClientSecret" />
+            </div>
+            <div class="adminData">
+                <setting-editor asp-for="ClientSecret"></setting-editor>
+                <span asp-validation-for="ClientSecret"></span>
+            </div>
+        </div>
+				<div class="adminRow">
+            <div class="adminTitle">
+                <smart-label asp-for="SecondKey" />
+            </div>
+            <div class="adminData">
+                <setting-editor asp-for="SecondKey"></setting-editor>
+                <span asp-validation-for="SecondKey"></span>
+            </div>
+        </div>
+        <div class="adminRow">
+            <div class="adminTitle">
+                <smart-label asp-for="Endpoint" />
+            </div>
+            <div class="adminData">
+                <div class="ctl-label">
+									<label>@Model.Endpoint</label>
+								</div>
+            </div>
+        </div>
+				<div class="adminRow">
+            <div class="adminTitle">
+                <smart-label asp-for="Region" />
+            </div>
+            <div class="adminData">
+                <div class="ctl-label">
+									<label>@Model.Region</label>
+								</div>
+            </div>
+        </div>
+
+				<hr>
+
+				<div class="adminRow">
+            <div class="adminTitle">
+                <smart-label asp-for="AdditionalFee" />
+            </div>
+            <div class="adminData">
+                <setting-editor asp-for="AdditionalFee" sm-postfix="@ViewBag.CurrentCurrencyCode"></setting-editor>
+                <span asp-validation-for="AdditionalFee"></span>
+            </div>
+        </div>
+        <div class="adminRow">
+            <div class="adminTitle">
+                <smart-label asp-for="AdditionalFeePercentage" />
+            </div>
+            <div class="adminData">
+                <setting-editor asp-for="AdditionalFeePercentage"></setting-editor>
+                <span asp-validation-for="AdditionalFeePercentage"></span>
+            </div>
+        </div>
+
+				<hr>
+				<br>
+				<br>
+
+				<div class="adminRow">
+            <div class="adminTitle">
+                <smart-label asp-for="IsSandbox" />
+            </div>
+            <div class="adminData">
+                <setting-editor asp-for="IsSandbox"></setting-editor>
+                <span asp-validation-for="IsSandbox"></span>
+            </div>
+        </div>
+				<div class="plugin-configuration">
+						<div style="max-width: initial; padding-left: 0">
+								<div class="alert alert-info alert-dismissible">
+										@Html.Raw(T("Plugins.Smartstore.PayU.SandboxWarning"))
+								</div>
+						</div>
+				</div>
+				<div class="adminRow">
+            <div class="adminTitle">
+                <smart-label asp-for="SandboxClientID" />
+            </div>
+            <div class="adminData">
+                <setting-editor asp-for="SandboxClientID"></setting-editor>
+                <span asp-validation-for="SandboxClientID"></span>
+            </div>
+        </div>
+				<div class="adminRow">
+            <div class="adminTitle">
+                <smart-label asp-for="SandboxPosID" />
+            </div>
+            <div class="adminData">
+                <setting-editor asp-for="SandboxPosID"></setting-editor>
+                <span asp-validation-for="SandboxPosID"></span>
+            </div>
+        </div>
+				<div class="adminRow">
+            <div class="adminTitle">
+                <smart-label asp-for="SandboxClientSecret" />
+            </div>
+            <div class="adminData">
+                <setting-editor asp-for="SandboxClientSecret"></setting-editor>
+                <span asp-validation-for="SandboxClientSecret"></span>
+            </div>
+        </div>
+				<div class="adminRow">
+            <div class="adminTitle">
+                <smart-label asp-for="SandboxSecondKey" />
+            </div>
+            <div class="adminData">
+                <setting-editor asp-for="SandboxSecondKey"></setting-editor>
+                <span asp-validation-for="SandboxSecondKey"></span>
+            </div>
+        </div>
+				<div class="adminRow">
+            <div class="adminTitle">
+                <smart-label asp-for="SandboxWebhook" />
+            </div>
+            <div class="adminData">
+                <setting-editor asp-for="SandboxWebhook"></setting-editor>
+                <span asp-validation-for="SandboxWebhook"></span>
+            </div>
+        </div>
+				<div class="adminRow">
+            <div class="adminTitle">
+                <smart-label asp-for="SandboxEndpoint" />
+            </div>
+            <div class="adminData">
+                <div class="ctl-label">
+									<label>@Model.SandboxEndpoint</label>
+								</div>
+            </div>
+        </div>
+				<div class="adminRow">
+            <div class="adminTitle">
+                <smart-label asp-for="SandboxRegion" />
+            </div>
+            <div class="adminData">
+                <div class="ctl-label">
+									<label>@Model.SandboxRegion</label>
+								</div>
+            </div>
+        </div>
+    </div>
+</form>

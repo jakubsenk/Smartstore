@@ -1,0 +1,166 @@
+﻿<Language Name="English" IsDefault="true" IsRightToLeft="false">
+    <LocaleResource Name="Plugins.FriendlyName.Smartstore.PayU" AppendRootKey="false">
+        <Value>PayU</Value>
+    </LocaleResource>
+    <LocaleResource Name="Plugins.Description.Smartstore.PayU" AppendRootKey="false">
+        <Value>Extends the store with PayU payment.</Value>
+    </LocaleResource>
+    <LocaleResource Name="Plugins.FriendlyName.Payments.PayU" AppendRootKey="false">
+        <Value>Online payment with PayU</Value>
+    </LocaleResource>
+    <LocaleResource Name="Plugins.Description.Payments.PayU" AppendRootKey="false">
+        <Value>Adds payment via PayU feature to the store.</Value>
+    </LocaleResource>
+
+    <LocaleResource Name="Plugins.Smartstore.PayU" AppendRootKey="false">
+        <Children>
+            <LocaleResource Name="AdminInstruction">
+                <Value>
+                    <![CDATA[
+						<p>To set up <b>PayU</b>:</p>
+                        <ul>
+                            <li>Create an account with PayU or log in with your existing account.</li>
+                            <li>Create shop in Online payments / My shops / Add shop.</li>
+                            <li>In step 1 fill basic information like name, url, etc.</li>
+                            <li>In step 2 choose POS name and make sure POS type is <b>REST API (Checkout)</b>.</li>
+                            <li>In step 3 copy configuration keys to this form.</li>
+                        </ul>
+					]]>
+                </Value>
+            </LocaleResource>
+            <LocaleResource Name="SandboxWarning">
+                <Value>
+                    <![CDATA[
+						<p>Sandbox settings, do not use unless you know what you are doing.</p>
+					]]>
+                </Value>
+            </LocaleResource>
+            <LocaleResource Name="CookieInfo">
+                <Value>PayU uses cookies to display and process the payment transaction.</Value>
+            </LocaleResource>
+            <LocaleResource Name="Description">
+                <Value>Transaction description</Value>
+            </LocaleResource>
+            <LocaleResource Name="Description.Hint">
+                <Value>Short description of transaction displayed in confirmation email from PayU.</Value>
+            </LocaleResource>
+            <LocaleResource Name="IsSandbox">
+                <Value>Is sandbox</Value>
+            </LocaleResource>
+            <LocaleResource Name="IsSandbox.Hint">
+                <Value>Wheter to use sandbox credentials or real ones.</Value>
+            </LocaleResource>
+            <LocaleResource Name="ClientID.Hint">
+                <Value>Obtained from PayU during shop creation.</Value>
+            </LocaleResource>
+            <LocaleResource Name="ClientID">
+                <Value>OAuth protocol - client_id</Value>
+            </LocaleResource>
+            <LocaleResource Name="ClientID.Hint">
+                <Value>Obtained from PayU during shop creation.</Value>
+            </LocaleResource>
+            <LocaleResource Name="PosID">
+                <Value>POS ID (pos_id)</Value>
+            </LocaleResource>
+            <LocaleResource Name="PosID.Hint">
+                <Value>Obtained from PayU during shop creation.</Value>
+            </LocaleResource>
+            <LocaleResource Name="ClientSecret">
+                <Value>OAuth protocol - client_secret</Value>
+            </LocaleResource>
+            <LocaleResource Name="ClientSecret.Hint">
+                <Value>Obtained from PayU during shop creation.</Value>
+            </LocaleResource>
+            <LocaleResource Name="SecondKey">
+                <Value>Second key (MD5)</Value>
+            </LocaleResource>
+            <LocaleResource Name="SecondKey.Hint">
+                <Value>Obtained from PayU during shop creation.</Value>
+            </LocaleResource>
+            <LocaleResource Name="Endpoint">
+                <Value>Endpoint</Value>
+            </LocaleResource>
+            <LocaleResource Name="Endpoint.Hint">
+                <Value>PayU endpoint for payments.</Value>
+            </LocaleResource>
+            <LocaleResource Name="Region">
+                <Value>Region</Value>
+            </LocaleResource>
+            <LocaleResource Name="Region.Hint">
+                <Value>PayU region for app authorization. This is currently always pl no matter your real region.</Value>
+            </LocaleResource>
+            <LocaleResource Name="SandboxClientID">
+                <Value>Sandbox: OAuth protocol - client_id</Value>
+            </LocaleResource>
+            <LocaleResource Name="SandboxClientID.Hint">
+                <Value>Obtained from PayU during shop creation.</Value>
+            </LocaleResource>
+            <LocaleResource Name="SandboxPosID">
+                <Value>Sandbox: POS ID (pos_id)</Value>
+            </LocaleResource>
+            <LocaleResource Name="SandboxPosID.Hint">
+                <Value>Obtained from PayU during shop creation.</Value>
+            </LocaleResource>
+            <LocaleResource Name="SandboxClientSecret">
+                <Value>Sandbox: OAuth protocol - client_secret</Value>
+            </LocaleResource>
+            <LocaleResource Name="SandboxClientSecret.Hint">
+                <Value>Obtained from PayU during shop creation.</Value>
+            </LocaleResource>
+            <LocaleResource Name="SandboxSecondKey">
+                <Value>Sandbox: Second key (MD5)</Value>
+            </LocaleResource>
+            <LocaleResource Name="SandboxSecondKey.Hint">
+                <Value>Obtained from PayU during shop creation.</Value>
+            </LocaleResource>
+            <LocaleResource Name="SandboxEndpoint">
+                <Value>Sandbox: Endpoint</Value>
+            </LocaleResource>
+            <LocaleResource Name="SandboxEndpoint.Hint">
+                <Value>PayU endpoint for test payments.</Value>
+            </LocaleResource>
+            <LocaleResource Name="SandboxRegion">
+                <Value>Sandbox: Region</Value>
+            </LocaleResource>
+            <LocaleResource Name="SandboxRegion.Hint">
+                <Value>PayU region for app authorization. This is currently always pl no matter your real region.</Value>
+            </LocaleResource>
+            <LocaleResource Name="SandboxWebhook">
+                <Value>Sandbox: Webhook</Value>
+            </LocaleResource>
+            <LocaleResource Name="SandboxWebhook.Hint">
+                <Value>If you use application on local environment, use webhook for connecting PayU with your localhost, for example with ngrok.</Value>
+            </LocaleResource>
+            <LocaleResource Name="AdditionalFee">
+                <Value>Additional fee</Value>
+            </LocaleResource>
+            <LocaleResource Name="AdditionalFee.Hint">
+                <Value>Enter additional fee to charge your customers.</Value>
+            </LocaleResource>
+            <LocaleResource Name="AdditionalFeePercentage">
+                <Value>Additional fee. Use percentage</Value>
+            </LocaleResource>
+            <LocaleResource Name="AdditionalFeePercentage.Hint">
+                <Value>Specifies whether to apply a additional percentage fee to the order total. If not enabled, a fixed value is used.</Value>
+            </LocaleResource>
+            <LocaleResource Name="PaymentInfo">
+                <Value>
+                    After completing the order you will be redirected to an external payment provider if necessary,
+                    where you can make the payment for your order.
+                </Value>
+            </LocaleResource>
+        </Children>
+    </LocaleResource>
+    <LocaleResource Name="Plugins.PaymentInfo.Payments" AppendRootKey="false">
+        <Children>
+            <LocaleResource Name="PayU">
+                <Value>
+                    <![CDATA[
+                        After completing the order you will be redirected to an external payment provider if necessary,
+                        where you can make the payment for your order.
+                    ]]>
+                </Value>
+            </LocaleResource>
+        </Children>
+    </LocaleResource>
+</Language>
