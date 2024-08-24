@@ -1,0 +1,169 @@
+﻿<Language Name="English" IsDefault="true" IsRightToLeft="false">
+    <LocaleResource Name="Plugins.FriendlyName.Smartstore.PayU" AppendRootKey="false">
+        <Value>PayU</Value>
+    </LocaleResource>
+    <LocaleResource Name="Plugins.Description.Smartstore.PayU" AppendRootKey="false">
+        <Value>Přidá možnost platby skrze platební bránu PayU.</Value>
+    </LocaleResource>
+    <LocaleResource Name="Plugins.FriendlyName.Payments.PayU" AppendRootKey="false">
+        <Value>Online platba přes PayU</Value>
+    </LocaleResource>
+    <LocaleResource Name="Plugins.Description.Payments.PayU" AppendRootKey="false">
+        <Value>Přidá možnost platby skrze platební bránu PayU.</Value>
+    </LocaleResource>
+
+    <LocaleResource Name="Plugins.Smartstore.PayU" AppendRootKey="false">
+        <Children>
+            <LocaleResource Name="AdminInstruction">
+                <Value>
+                    <![CDATA[
+						<p>K nastavení <b>PayU</b>:</p>
+                        <ul>
+                            <li>Vytvořte si účet u PayU nebo se přihlaste ke stávajícímu.</li>
+                            <li>Vytvořte obchod v Online platby / Moje obchody / Nový.</li>
+                            <li>V kroku 1 vyplňte požadované údaje jako název, url apod.</li>
+                            <li>V kroku 2 zvolte POS název a ujistěte se, že POS typ je <b>REST API (Checkout)</b>.</li>
+                            <li>V kroku 3 zkopírujte konfigurační klíče do tohoto formuláře.</li>
+                        </ul>
+					]]>
+                </Value>
+            </LocaleResource>
+            <LocaleResource Name="SandboxWarning">
+                <Value>
+                    <![CDATA[
+						<p>Nastavení testovacího režimu, nepoužívejte pokud nevíte, co děláte.</p>
+					]]>
+                </Value>
+            </LocaleResource>
+            <LocaleResource Name="CookieInfo">
+                <Value>PayU používá cookies k zobrazení a zpracování transakce.</Value>
+            </LocaleResource>
+            <LocaleResource Name="Description">
+                <Value>Popis transakce</Value>
+            </LocaleResource>
+            <LocaleResource Name="Description.Hint">
+                <Value>Krátký popis transakce zobrazený v potvrzovacím emailu od PayU.</Value>
+            </LocaleResource>
+            <LocaleResource Name="IsSandbox">
+                <Value>Testovací režim</Value>
+            </LocaleResource>
+            <LocaleResource Name="IsSandbox.Hint">
+                <Value>Při zapnutí testovacího režimu budou použity testovací údaje místo produkčních.</Value>
+            </LocaleResource>
+            <LocaleResource Name="ClientID">
+                <Value>OAuth protocol - client_id</Value>
+            </LocaleResource>
+            <LocaleResource Name="ClientID.Hint">
+                <Value>Získáno od PayU při vytváření obchodu.</Value>
+            </LocaleResource>
+            <LocaleResource Name="PosID">
+                <Value>POS ID (pos_id)</Value>
+            </LocaleResource>
+            <LocaleResource Name="PosID.Hint">
+                <Value>Získáno od PayU při vytváření obchodu.</Value>
+            </LocaleResource>
+            <LocaleResource Name="ClientSecret">
+                <Value>OAuth protocol - client_secret</Value>
+            </LocaleResource>
+            <LocaleResource Name="ClientSecret.Hint">
+                <Value>Získáno od PayU při vytváření obchodu.</Value>
+            </LocaleResource>
+            <LocaleResource Name="SecondKey">
+                <Value>Second key (MD5)</Value>
+            </LocaleResource>
+            <LocaleResource Name="SecondKey.Hint">
+                <Value>Získáno od PayU při vytváření obchodu.</Value>
+            </LocaleResource>
+            <LocaleResource Name="Endpoint">
+                <Value>Endpoint</Value>
+            </LocaleResource>
+            <LocaleResource Name="Endpoint.Hint">
+                <Value>PayU endpoint pro provádění plateb.</Value>
+            </LocaleResource>
+            <LocaleResource Name="Region">
+                <Value>Region</Value>
+            </LocaleResource>
+            <LocaleResource Name="Region.Hint">
+                <Value>PayU region pro autorizaci aplikace. Toto je momentálně vždy pl bez ohledu na Vaši skutečnou lokaci.</Value>
+            </LocaleResource>
+            <LocaleResource Name="SandboxClientID">
+                <Value>Sandbox: OAuth protocol - client_id</Value>
+            </LocaleResource>
+            <LocaleResource Name="SandboxClientID.Hint">
+                <Value>Získáno od PayU při vytváření testovacího obchodu.</Value>
+            </LocaleResource>
+            <LocaleResource Name="SandboxPosID">
+                <Value>Sandbox: POS ID (pos_id)</Value>
+            </LocaleResource>
+            <LocaleResource Name="SandboxPosID.Hint">
+                <Value>Získáno od PayU při vytváření testovacího obchodu.</Value>
+            </LocaleResource>
+            <LocaleResource Name="SandboxClientSecret">
+                <Value>Sandbox: OAuth protocol - client_secret</Value>
+            </LocaleResource>
+            <LocaleResource Name="SandboxClientSecret.Hint">
+                <Value>Získáno od PayU při vytváření testovacího obchodu.</Value>
+            </LocaleResource>
+            <LocaleResource Name="SandboxSecondKey">
+                <Value>Sandbox: Second key (MD5)</Value>
+            </LocaleResource>
+            <LocaleResource Name="SandboxSecondKey.Hint">
+                <Value>Získáno od PayU při vytváření testovacího obchodu.</Value>
+            </LocaleResource>
+            <LocaleResource Name="SandboxEndpoint">
+                <Value>Sandbox: Endpoint</Value>
+            </LocaleResource>
+            <LocaleResource Name="SandboxEndpoint.Hint">
+                <Value>PayU endpoint pro provádění testovacích plateb.</Value>
+            </LocaleResource>
+            <LocaleResource Name="SandboxRegion">
+                <Value>Sandbox: Region</Value>
+            </LocaleResource>
+            <LocaleResource Name="SandboxRegion.Hint">
+                <Value>PayU region pro autorizaci aplikace. Toto je momentálně vždy pl bez ohledu na Vaši skutečnou lokaci.</Value>
+            </LocaleResource>
+            <LocaleResource Name="SandboxWebhook">
+                <Value>Sandbox: Webhook</Value>
+            </LocaleResource>
+            <LocaleResource Name="SandboxWebhook.Hint">
+                <Value>Pokud používáte aplikaci na lokálním prostředí, použijte webhook pro propojení PayU s Vaším localhostem, např. pomocí aplikace ngrok.</Value>
+            </LocaleResource>
+            <LocaleResource Name="AdditionalFee">
+                <Value>Dodatečný poplatek</Value>
+            </LocaleResource>
+            <LocaleResource Name="AdditionalFee.Hint">
+                <Value>Zadejte dodatečný poplatek při platbě s PayU.</Value>
+            </LocaleResource>
+            <LocaleResource Name="AdditionalFeePercentage">
+                <Value>Procentuální dodatečný poplatek</Value>
+            </LocaleResource>
+            <LocaleResource Name="AdditionalFeePercentage.Hint">
+                <Value>Specifikujte, zda se má k celkové částce objednávky použít dodatečný procentní poplatek. Pokud není povoleno, použije se pevná hodnota.</Value>
+            </LocaleResource>
+            <LocaleResource Name="ShowButtonInMiniShoppingCart">
+                <Value>ShowButtonInMiniShoppingCart</Value>
+            </LocaleResource>
+            <LocaleResource Name="ShowButtonInMiniShoppingCart.Hint">
+                <Value>ShowButtonInMiniShoppingCart.Hint</Value>
+            </LocaleResource>
+            <LocaleResource Name="PaymentInfo">
+                <Value>
+                    Po dokončení objednávky budete přesměrováni na zabezpečenou platební bránu,
+                    kde můžete objednávku zaplatit.
+                </Value>
+            </LocaleResource>
+        </Children>
+    </LocaleResource>
+    <LocaleResource Name="Plugins.PaymentInfo.Payments" AppendRootKey="false">
+        <Children>
+            <LocaleResource Name="PayU">
+                <Value>
+                    <![CDATA[
+                    Po dokončení objednávky budete přesměrováni na zabezpečenou platební bránu,
+                    kde můžete objednávku zaplatit.
+                ]]>
+                </Value>
+            </LocaleResource>
+        </Children>
+    </LocaleResource>
+</Language>
