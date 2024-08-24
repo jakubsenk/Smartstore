@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+    <PropertyGroup>
+        <Product>SmartStore AG PayU</Product>
+        <OutputPath>..\..\Smartstore.Web\Modules\Smartstore.PayU</OutputPath>
+        <OutDir>$(OutputPath)</OutDir>
+        <Authors>jakubsenk</Authors>
+    </PropertyGroup>
+    <ItemGroup>
+      <None Remove="Localization\resources.cs-CZ.xml" />
+      <None Remove="Localization\resources.en.xml" />
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\..\Smartstore.Web\Smartstore.Web.csproj">
+            <Private>False</Private>
+            <CopyLocal>False</CopyLocal>
+            <CopyLocalSatelliteAssemblies>False</CopyLocalSatelliteAssemblies>
+        </ProjectReference>
+    </ItemGroup>
+    <ItemGroup>
+      <Content Update="Localization\resources.cs-CZ.xml">
+        <SubType>Designer</SubType>
+      </Content>
+    </ItemGroup>
+</Project>
