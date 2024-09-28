@@ -512,7 +512,8 @@ namespace Smartstore.Admin.Controllers
                     Quantity = item.Quantity,
                     ValueType = item.ValueType,
                     WeightAdjustment = item.WeightAdjustment,
-                    IsPreSelected = item.IsPreSelected
+                    IsPreSelected = item.IsPreSelected,
+                    MediaFileId = item.MediaFileId,
                 });
             }
 
