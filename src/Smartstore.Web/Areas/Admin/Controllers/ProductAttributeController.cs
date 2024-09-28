@@ -482,6 +482,46 @@ namespace Smartstore.Admin.Controllers
         }
 
         [Permission(Permissions.Catalog.Variant.EditSet)]
+        public async Task<IActionResult> ProductAttributeOptionCopy(int targetSetId, string attributeName)
+        {
+            IQueryable<ProductAttribute> attributes = _db.ProductAttributes.Where(x => x.Name == attributeName);
+            if (attributes.Count() != 1)
+            {
+                return NotFound("Attribute not found!");
+            }
+            ICollection<ProductAttributeOptionsSet> optionsSet = attributes.First().ProductAttributeOptionsSets;
+            if (optionsSet == null || optionsSet.Count != 1)
+            {
+                return NotFound("Attribute set not found or invalid!");
+            }
+
+            ProductAttributeOptionsSet copyOptionSet = optionsSet.First();
+
+            ProductAttributeOptionsSet targetOptionSet = await _db.ProductAttributeOptionsSets.FindByIdAsync(targetSetId);
+
+            foreach (var item in copyOptionSet.ProductAttributeOptions)
+            {
+                targetOptionSet.ProductAttributeOptions.Add(new ProductAttributeOption
+                {
+                    Name = item.Name,
+                    Alias = item.Alias,
+                    Color = item.Color,
+                    DisplayOrder = item.DisplayOrder,
+                    LinkedProductId = item.LinkedProductId,
+                    PriceAdjustment = item.PriceAdjustment,
+                    Quantity = item.Quantity,
+                    ValueType = item.ValueType,
+                    WeightAdjustment = item.WeightAdjustment,
+                    IsPreSelected = item.IsPreSelected
+                });
+            }
+
+            _db.SaveChanges();
+
+            return Ok("Zkopírováno, obnovte stránku.");
+        }
+
+        [Permission(Permissions.Catalog.Variant.EditSet)]
         public async Task<IActionResult> ProductAttributeOptionEditPopup(int id, string btnId, string formId)
         {
             var option = await _db.ProductAttributeOptions.FindByIdAsync(id, false);
