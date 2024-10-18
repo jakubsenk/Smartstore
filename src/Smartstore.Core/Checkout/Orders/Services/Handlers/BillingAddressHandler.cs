@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Smartstore.Core.Checkout.Cart;
+using Smartstore.Core.Common;
 using Smartstore.Core.Data;
 using Smartstore.Core.Identity;
 
@@ -27,8 +28,8 @@ namespace Smartstore.Core.Checkout.Orders.Handlers
             var customer = context.Cart.Customer;
             var ga = customer.GenericAttributes;
 
-            if (context.Model != null 
-                && context.Model is int addressId 
+            if (context.Model != null
+                && context.Model is int addressId
                 && context.IsCurrentRoute(HttpMethods.Post, CheckoutActionNames.SelectBillingAddress))
             {
                 if (!await SetBillingAddress(customer, addressId))
@@ -93,6 +94,13 @@ namespace Smartstore.Core.Checkout.Orders.Handlers
             }
 
             await _db.LoadReferenceAsync(address, x => x.Country);
+
+            if (address.Country == null)
+            {
+                Country cz = _db.Countries.First(c => c.TwoLetterIsoCode == "CZ");
+                address.Country = cz;
+                await _db.SaveChangesAsync();
+            }
 
             if (address.Country.AllowsBilling)
             {
