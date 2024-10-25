@@ -1,0 +1,97 @@
+﻿<Language Name="English" IsDefault="true" IsRightToLeft="false">
+    <LocaleResource Name="Plugins.FriendlyName.Smartstore.Pays" AppendRootKey="false">
+        <Value>Pays</Value>
+    </LocaleResource>
+    <LocaleResource Name="Plugins.Description.Smartstore.Pays" AppendRootKey="false">
+        <Value>Přidá možnost platby skrze platební bránu Pays.</Value>
+    </LocaleResource>
+    <LocaleResource Name="Plugins.FriendlyName.Payments.Pays" AppendRootKey="false">
+        <Value>Online platba přes Pays</Value>
+    </LocaleResource>
+    <LocaleResource Name="Plugins.Description.Payments.Pays" AppendRootKey="false">
+        <Value>Přidá možnost platby skrze platební bránu Pays.</Value>
+    </LocaleResource>
+
+    <LocaleResource Name="Plugins.Smartstore.Pays" AppendRootKey="false">
+        <Children>
+            <LocaleResource Name="AdminInstruction">
+                <Value>
+                    <![CDATA[
+						<p>K nastavení <b>Pays</b>:</p>
+                        <ul>
+                            <li>Vytvořte si účet u Pays nebo se přihlaste ke stávajícímu.</li>
+                            <li>Vytvořte obchod v Online platby / Moje obchody / Nový.</li>
+                            <li>V kroku 1 vyplňte požadované údaje jako název, url apod.</li>
+                            <li>V kroku 2 zvolte POS název a ujistěte se, že POS typ je <b>REST API (Checkout)</b>.</li>
+                            <li>V kroku 3 zkopírujte konfigurační klíče do tohoto formuláře.</li>
+                        </ul>
+					]]>
+                </Value>
+            </LocaleResource>
+            <LocaleResource Name="SandboxWarning">
+                <Value>
+                    <![CDATA[
+						<p>Nastavení testovacího režimu, nepoužívejte pokud nevíte, co děláte.</p>
+					]]>
+                </Value>
+            </LocaleResource>
+            <LocaleResource Name="CookieInfo">
+                <Value>Pays používá cookies k zobrazení a zpracování transakce.</Value>
+            </LocaleResource>
+            <LocaleResource Name="Merchant">
+                <Value>Merchant</Value>
+            </LocaleResource>
+            <LocaleResource Name="Merchant.Hint">
+                <Value>Získáno od Pays při registraci obchodu.</Value>
+            </LocaleResource>
+            <LocaleResource Name="Shop">
+                <Value>Shop</Value>
+            </LocaleResource>
+            <LocaleResource Name="Shop.Hint">
+                <Value>Získáno od Pays při registraci obchodu.</Value>
+            </LocaleResource>
+            <LocaleResource Name="ApiKey">
+                <Value>Api key (MD5)</Value>
+            </LocaleResource>
+            <LocaleResource Name="ApiKey.Hint">
+                <Value>Získáno od Pays při registraci obchodu.</Value>
+            </LocaleResource>
+            <LocaleResource Name="AdditionalFee">
+                <Value>Dodatečný poplatek</Value>
+            </LocaleResource>
+            <LocaleResource Name="AdditionalFee.Hint">
+                <Value>Zadejte dodatečný poplatek při platbě s PayU.</Value>
+            </LocaleResource>
+            <LocaleResource Name="AdditionalFeePercentage">
+                <Value>Procentuální dodatečný poplatek</Value>
+            </LocaleResource>
+            <LocaleResource Name="AdditionalFeePercentage.Hint">
+                <Value>Specifikujte, zda se má k celkové částce objednávky použít dodatečný procentní poplatek. Pokud není povoleno, použije se pevná hodnota.</Value>
+            </LocaleResource>
+            <LocaleResource Name="ShowButtonInMiniShoppingCart">
+                <Value>ShowButtonInMiniShoppingCart</Value>
+            </LocaleResource>
+            <LocaleResource Name="ShowButtonInMiniShoppingCart.Hint">
+                <Value>ShowButtonInMiniShoppingCart.Hint</Value>
+            </LocaleResource>
+            <LocaleResource Name="PaymentInfo">
+                <Value>
+                    Po dokončení objednávky budete přesměrováni na zabezpečenou platební bránu,
+                    kde můžete objednávku zaplatit.
+                </Value>
+            </LocaleResource>
+        </Children>
+    </LocaleResource>
+    <LocaleResource Name="Plugins.PaymentInfo.Payments" AppendRootKey="false">
+        <Children>
+            <LocaleResource Name="Pays">
+                <Value>
+                    <![CDATA[
+                    Po dokončení objednávky budete přesměrováni na zabezpečenou platební bránu,
+                    kde můžete objednávku zaplatit.
+                ]]>
+                </Value>
+            </LocaleResource>
+        </Children>
+    </LocaleResource>
+</Language>
