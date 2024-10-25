@@ -1,0 +1,13 @@
+{
+  "$schema": "../module.schema.json",
+  "Author": "Jakub Šenk",
+  "Group": "Payment",
+  "SystemName": "Smartstore.Pays",
+  "FriendlyName": "Pays",
+  "Description": "Extends the store with Pays payment.",
+  "Version": "5.1.0",
+  "MinAppVersion": "5.1.0",
+  "Order": 1,
+  "ResourceRootKey": "Plugins.Smartstore.Pays",
+  "PrivateReferences": []
+}
