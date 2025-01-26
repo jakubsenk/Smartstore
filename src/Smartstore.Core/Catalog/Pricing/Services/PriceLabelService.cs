@@ -1,4 +1,5 @@
-﻿using Humanizer;
+﻿using System.Globalization;
+using Humanizer;
 using Humanizer.Localisation;
 using Smartstore.Core.Catalog.Products;
 using Smartstore.Core.Data;
@@ -22,7 +23,7 @@ namespace Smartstore.Core.Catalog.Pricing
         }
 
         public Localizer T { get; set; } = NullLocalizer.Instance;
-        
+
         public virtual PriceLabel GetDefaultComparePriceLabel()
         {
             return _defaultComparePriceLabel ??= GetPriceLabel(_priceSettings.DefaultComparePriceLabelId, true);
@@ -88,7 +89,7 @@ namespace Smartstore.Core.Catalog.Pricing
         public virtual (LocalizedValue<string>, string) GetPricePromoBadge(CalculatedPrice price)
         {
             Guard.NotNull(price, nameof(price));
-            
+
             if (!price.Saving.HasSaving || price.RegularPrice == null)
             {
                 return (null, null);
@@ -155,8 +156,78 @@ namespace Smartstore.Core.Catalog.Pricing
                 return null;
             }
 
+            if (CultureInfo.CurrentUICulture.Name == "cs-CZ")
+            {
+                return T("Products.Price.OfferCountdown", ApplyCzechWorkaround(remainingTime));
+            }
             var humanizedTimeString = remainingTime.Humanize(precision: 2, maxUnit: TimeUnit.Day, minUnit: TimeUnit.Minute);
             return T("Products.Price.OfferCountdown", humanizedTimeString);
+        }
+
+        private string ApplyCzechWorkaround(TimeSpan remainingTime)
+        {
+            // Czech language has a special rule for numbers ending with 2, 3 or 4.
+            // In this case, the number is followed by the word "hodiny" (hours) instead of "hodin" (hours).
+            // This is a workaround for the Humanizer library.
+            var czech = CultureInfo.GetCultureInfo("cs-CZ");
+            var days = remainingTime.Days;
+            var hours = remainingTime.Hours;
+            var minutes = remainingTime.Minutes;
+            string result = "";
+            if (days > 0)
+            {
+                if (days == 1)
+                {
+                    result += "1 den";
+                }
+                if (days > 1 && days < 5)
+                {
+                    result += $"{days} dny";
+                }
+                if (days >= 5)
+                {
+                    result += $"{days} dní";
+                }
+            }
+            if (hours > 0)
+            {
+                if (days > 0)
+                {
+                    result += ", ";
+                }
+                if (hours == 1)
+                {
+                    result += "1 hodinu";
+                }
+                if (hours > 1 && hours < 5)
+                {
+                    result += $"{hours} hodiny";
+                }
+                if (hours >= 5)
+                {
+                    result += $"{hours} hodin";
+                }
+            }
+            if (minutes > 0)
+            {
+                if (hours > 0)
+                {
+                    result += " a ";
+                }
+                if (minutes == 1)
+                {
+                    result += "1 minutu";
+                }
+                if (minutes > 1 && minutes < 5)
+                {
+                    result += $"{minutes} minuty";
+                }
+                if (minutes >= 5)
+                {
+                    result += $"{minutes} minut";
+                }
+            }
+            return result;
         }
     }
 }
