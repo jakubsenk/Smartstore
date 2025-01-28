@@ -64,6 +64,10 @@ namespace Smartstore.Web.Controllers
             }
 
             var model = await context.MapAddressesAsync(false);
+            if (model.NewAddress.CountryId == null)
+            {
+                model.NewAddress.CountryId = _db.Countries.FirstOrDefault(c => c.TwoLetterIsoCode == "CZ")?.Id;
+            }
 
             return View(result.ViewPath, model);
         }
